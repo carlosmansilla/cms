@@ -3,7 +3,7 @@
 <a href="section_insert.php?cat={$category}" class="boton">nuevo</a>
 
 <table border='1'>
-<tr><th>name</th><th>description</th><th>categoria</th><th></th></tr>
+<tr><th>nombre</th><th>descripcion</th><th>categoria</th><th></th></tr>
 {foreach from=$sections item=section}
   <tr><td><a href='file_list.php?sec={$section->id}'>{$section->name}</a></td>
       <td>{$section->description}</td>

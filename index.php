@@ -2,6 +2,7 @@
 # cargamos el archivo de configuracion
 require 'config.php';
 
+$mensaje = "";
 
 # control de login de usuario
 if ( isset( $_POST['nick'] ) and isset( $_POST['pass'] ) ){
@@ -15,8 +16,10 @@ if ( isset( $_POST['nick'] ) and isset( $_POST['pass'] ) ){
 	if($nick != "" && $pass != ""){
 
 		$user = User::find_by_nick($nick);
-		
-		if($user->pass == $pass){
+		if($user == null){
+            $mensaje = "usuario no existe";
+        }
+        elseif($user->pass == $pass){
 			session_start();
   			$_SESSION['acceso'] = "1";
 			$_SESSION['id_user'] = $user->id;
@@ -71,12 +74,12 @@ if (isset($_GET["sec"])) {
 	
 	$titulo = strtoupper( $section->category->name ." / ". $section->name );
 	$descripcion = $section->description;
-    
  
     $smarty->assign('url','index.php?');
     $smarty->assign('filtro','sec='.$seccion.'&');
 }
 
+$smarty->assign('mensaje', $mensaje);
 $smarty->assign('categories', $categorias);  
 $smarty->assign('titulo', $titulo);
 $smarty->assign('descripcion', $descripcion);

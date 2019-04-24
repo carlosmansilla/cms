@@ -2,7 +2,7 @@
 <a href="category_insert.php" class="boton">nuevo</a>
 
 <table border='1'>
-<tr><th>name</th><th>description</th><th></th></tr>
+<tr><th>nombre</th><th>descripcion</th><th></th></tr>
 {foreach from=$categories item=category}
   <tr><td><a href="section_list.php?cat={$category->id}">{$category->name}</a></td>
       <td>{$category->description}</td>

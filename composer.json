@@ -1,6 +1,6 @@
 {
-   	"require": {
-   		"php-activerecord/php-activerecord" : "*",
-   		"smarty/smarty" : "*"
-   	} 
+    "require": {
+        "php-activerecord/php-activerecord" : "*",
+        "smarty/smarty" : "*"
+    }
 }

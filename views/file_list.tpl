@@ -2,9 +2,9 @@
 <a href="file_insert.php?sec={$section}" class="boton">nuevo</a>
 
 <table border='1'>
-<tr><th>title</th><th>body</th><th>link</th><th>section</th><th></th></tr>
+<tr><th>nombre</th><th>descripcion</th><th>enlace</th><th>seccion</th><th></th></tr>
 {foreach from=$files item=file}
-  <tr><td>{$file->title}</td><td>{$file->body}</td><td><a href="{$file->link}" download> descarga</a></td><td>{$file->section->name}</td><td><a href="file_insert.php?id={$file->id}" class="boton">editar</a> <a onclick = eliminar("file_del.php?id={$file->id}") class="boton">eliminar</a></td>
+  <tr><td>{$file->title}</td><td>{$file->body}</td><td><a href="{$file->link}" download="download"> descarga</a></td><td>{$file->section->name}</td><td><a href="file_insert.php?id={$file->id}" class="boton">editar</a> <a onclick = eliminar("file_del.php?id={$file->id}") class="boton">eliminar</a></td>
 </tr>
 {/foreach}
 </table>

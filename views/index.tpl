@@ -15,15 +15,15 @@
     </div>  
     <div id='document'>
 	{if $titulo eq ""}
-		<span id='titulo'>REPOSITORIO</span>
-		<p id='descripcion'>Elija una categoria del menu.</p> 
+		<span class='nombre'>REPOSITORIO</span>
+		<p class='descripcion'>Elija una categoria del menu.</p>
 		<br/>
 	{else}
-	    <span id='titulo'>{$titulo}</span>
-		<p id='descripcion'>{$descripcion}</p> 
+	    <span class='nombre'>{$titulo}</span>
+		<p class='descripcion'>{$descripcion}</p>
 		<hr/>
         {foreach from=$files item=file}
-          <div class='item'><a href='{$file->link}' title='{$file->body}' class='icon' download> <img src="images/document.png" height="42" width="42"/><br/>{$file->title}</a></div>
+          <div class='item'><a href='{$file->link}' title='{$file->body}' class='icon' download="download"> <img src="images/document.png" height="42" width="42"/><br/>{$file->title}</a></div>
         {/foreach}
     {/if}
     </div>
